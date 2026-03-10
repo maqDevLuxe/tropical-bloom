@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 180 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 180 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 30% 10%;
+
+    --primary: 175 80% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 95% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 175 20% 95%;
+    --muted-foreground: 175 15% 40%;
+
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 175 20% 88%;
+    --input: 175 20% 88%;
+    --ring: 175 80% 30%;
+
+    --radius: 0.5rem;
+
+    --tropical-deep: 180 40% 8%;
+    --tropical-teal: 175 80% 30%;
+    --tropical-teal-light: 175 60% 85%;
+    --sunset-orange: 25 95% 55%;
+    --sunset-gold: 40 95% 55%;
+    --tropical-leaf: 140 60% 35%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 175 80% 30%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 175 20% 95%;
+    --sidebar-accent-foreground: 180 30% 10%;
+    --sidebar-border: 175 20% 88%;
+    --sidebar-ring: 175 80% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24 py-20 md:py-28;
+  }
+
+  .gradient-tropical {
+    background: linear-gradient(135deg, hsl(var(--tropical-teal)), hsl(var(--tropical-deep)));
+  }
+
+  .gradient-sunset {
+    background: linear-gradient(135deg, hsl(var(--sunset-orange)), hsl(var(--sunset-gold)));
+  }
+
+  .text-gradient-tropical {
+    background: linear-gradient(135deg, hsl(var(--tropical-teal)), hsl(var(--sunset-orange)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: hsla(0, 0%, 100%, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(0, 0%, 100%, 0.12);
+  }
+
+  .card-hover {
+    @apply transition-all duration-500;
+  }
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px -15px hsla(var(--tropical-teal) / 0.3);
+  }
+}
+
+/* Custom crosshair cursor */
+* {
+  cursor: crosshair;
+}
+a, button, [role="button"], input, textarea, select {
+  cursor: crosshair;
+}
